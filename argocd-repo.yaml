@@ -1,0 +1,10 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Repository
+metadata:
+    name: main-repo
+    namespace: argocd
+spec:
+    insecure: false
+    enableLfs: false
+    type: git
+    repo: https://github.com/CompositeCoding/homeLab.git
