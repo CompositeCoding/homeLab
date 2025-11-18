@@ -8,14 +8,8 @@ spec:
     source:
         repoURL: "https://github.com/CompositeCoding/homeLab.git"
         targetRevision: main
-        path: charts/nginx
-        helm:
-            # Optional: override values here or add custom value files
-            # valueFiles: [values.yaml]
-            parameters:
-                # Example: override replicaCount via Helm instead of a Kustomize patch
-                - name: replicaCount
-                  value: "2"
+        path: overlays
+        kustomize: {}
     destination:
         server: "https://kubernetes.default.svc"
         namespace: home
