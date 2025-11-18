@@ -1,10 +1,10 @@
-apiVersion: argoproj.io/v1alpha1
-kind: Repository
+apiVersion: v1
+kind: Secret
 metadata:
     name: main-repo
     namespace: argocd
-spec:
-    insecure: false
-    enableLfs: false
-    type: git
-    repo: https://github.com/CompositeCoding/homeLab.git
+    labels:
+        argocd.argoproj.io/secret-type: repository # ← THIS LABEL IS CRITICAL
+stringData:
+    url: https://github.com/CompositeCoding/homeLab.git
+type: Opaque
