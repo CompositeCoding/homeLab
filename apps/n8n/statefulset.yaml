@@ -3,35 +3,40 @@ kind: Statefulset
 metadata:
     name: n8n
 spec:
-    replicas: 1
     selector:
         matchLabels:
             app: n8n
-            spec:
-                containers:
-                    - name: n8n
-                      image: n8nio/n8n:1.121.2
-                      resources:
-                          limits:
-                              memory: 2Gi
-                      ports:
-                          - containerPort: 5678
-                      env:
-                          - name: GENERIC_TIMEZONE
-                            value: "America/Toronto"
-                          - name: TZ
-                            value: "America/Toronto"
-                          - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
-                            value: "true"
-                          - name: N8N_RUNNERS_ENABLED
-                            value: "true"
-                      volumeMounts:
-                          - name: n8n-volume
-                            mountPath: /home/node/.n8n
-                volumes:
-                    - name: n8n-data
-                      persistentVolumeClaim:
-                          claimName: n8n-pvc
-                persistentVolumeClaimRetentionPolicy:
-                    whenDeleted: Retain
-                    whenScaled: Retain
+
+    replicas: 1
+    template:
+        metadata:
+            labels:
+                app: n8n
+        spec:
+            containers:
+                - name: n8n
+                  image: n8nio/n8n:1.121.2
+                  resources:
+                      limits:
+                          memory: 2Gi
+                  ports:
+                      - containerPort: 5678
+                  env:
+                      - name: GENERIC_TIMEZONE
+                        value: "America/Toronto"
+                      - name: TZ
+                        value: "America/Toronto"
+                      - name: N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS
+                        value: "true"
+                      - name: N8N_RUNNERS_ENABLED
+                        value: "true"
+                  volumeMounts:
+                      - name: n8n-volume
+                        mountPath: /home/node/.n8n
+        volumes:
+            - name: n8n-data
+              persistentVolumeClaim:
+                  claimName: n8n-pvc
+        persistentVolumeClaimRetentionPolicy:
+            whenDeleted: Retain
+            whenScaled: Retain
