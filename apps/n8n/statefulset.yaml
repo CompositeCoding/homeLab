@@ -16,9 +16,6 @@ spec:
                               memory: 2Gi
                       ports:
                           - containerPort: 5678
-                      volumeMounts:
-                          - name: n8n-data
-                            mountPath: /home/node/.n8n
                       env:
                           - name: GENERIC_TIMEZONE
                             value: "America/Toronto"
@@ -28,6 +25,9 @@ spec:
                             value: "true"
                           - name: N8N_RUNNERS_ENABLED
                             value: "true"
+                      volumeMounts:
+                          - name: n8n-volume
+                            mountPath: /home/node/.n8n
                 volumes:
                     - name: n8n-data
                       persistentVolumeClaim:
