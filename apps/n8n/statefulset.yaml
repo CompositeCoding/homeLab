@@ -34,7 +34,7 @@ spec:
                       - name: n8n-volume
                         mountPath: /home/node/.n8n
         volumes:
-            - name: n8n-data
+            - name: n8n-volume
               persistentVolumeClaim:
                   claimName: n8n-pvc
         persistentVolumeClaimRetentionPolicy:
