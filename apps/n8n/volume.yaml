@@ -10,6 +10,3 @@ spec:
     storageClassName: standard
     accessModes:
         - ReadWriteOnce
-    gcePersistentDisk:
-        pdName: n8n-disk
-        fsType: ext4
