@@ -33,10 +33,12 @@ spec:
                   volumeMounts:
                       - name: n8n-volume
                         mountPath: /home/node/.n8n
-                  volumes:
-                      - name: n8n-volume
-                        persistentVolumeClaim:
-                            claimName: n8n-pvc
-        persistentVolumeClaimRetentionPolicy:
-            whenDeleted: Retain
-            whenScaled: Retain
+    volumeClaimTemplates:
+        - metadata:
+              name: n8n-volume
+          spec:
+              accessModes: ["ReadWriteOnce"]
+              storageClassName: "n8n-storage-class"
+              resources:
+                  requests:
+                      storage: 50Gi
