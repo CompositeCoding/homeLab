@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-    name: n8n
+    name: n8n-statefulset
 spec:
     selector:
         matchLabels:
             app: n8n
-
+    serviceName: n8n-service
     replicas: 1
     template:
         metadata:
@@ -31,13 +31,17 @@ spec:
                       - name: N8N_RUNNERS_ENABLED
                         value: "true"
                   volumeMounts:
-                      - name: n8n-volume
+                      - name: n8n-data
                         mountPath: /home/node/.n8n
     volumeClaimTemplates:
         - metadata:
-              name: n8n-volume
+              name: n8n-data
           spec:
+              selector:
+                  matchLabels:
+                      app: n8n
               accessModes: ["ReadWriteOnce"]
+              storageClassName: standard
               resources:
                   requests:
-                      storage: 50Gi
+                      storage: 30Gi
