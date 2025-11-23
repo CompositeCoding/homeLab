@@ -6,7 +6,19 @@ metadata:
         app: n8n
 spec:
     capacity:
-        storage: 30Gi
-    storageClassName: standard
+        storage: 50Gi
+    volumeMode: Filesystem
     accessModes:
         - ReadWriteOnce
+    persistentVolumeReclaimPolicy: Delete
+    storageClassName: local-storage
+    local:
+        path: /var/mnt/local-volume
+    nodeAffinity:
+        required:
+            nodeSelectorTerms:
+                - matchExpressions:
+                      - key: kubernetes.io/hostname
+                        operator: In
+                        values:
+                            - talos-n4r-glu

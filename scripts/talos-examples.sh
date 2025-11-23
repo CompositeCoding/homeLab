@@ -3,8 +3,8 @@
 # Talos Common Operations Examples
 # Replace 192.168.2.32 with your node IP
 
-NODE="192.168.2.32"
-TALOSCONFIG="../config/talos/talosconfig"
+export NODE="192.168.2.32"
+export TALOSCONFIG="./talos/talosconfig"
 
 # Get Talos version
 talosctl -n $NODE --talosconfig $TALOSCONFIG version
@@ -80,4 +80,3 @@ talosctl -n $NODE --talosconfig $TALOSCONFIG read /proc/modules
 
 # Get cluster members
 talosctl -n $NODE --talosconfig $TALOSCONFIG get members
-
