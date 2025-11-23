@@ -41,7 +41,7 @@ spec:
                   matchLabels:
                       app: n8n
               accessModes: ["ReadWriteOnce"]
-              storageClassName: standard
+              storageClassName: local-storage
               resources:
                   requests:
                       storage: 30Gi
