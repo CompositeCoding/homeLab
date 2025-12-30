@@ -5,7 +5,7 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: argo-service
+      name: argocd-server
       port:
         number: 80
   ingressClassName: tailscale
