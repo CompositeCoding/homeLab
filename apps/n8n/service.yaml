@@ -5,10 +5,5 @@ metadata:
 spec:
     type: LoadBalancer
     loadBalancerClass: tailscale
-    ports:
-        - port: 5678
-          targetPort: 5678
-          protocol: TCP
-          name: n8n-port
     selector:
         app: n8n
