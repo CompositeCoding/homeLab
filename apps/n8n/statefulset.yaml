@@ -29,6 +29,8 @@ spec:
                   ports:
                       - containerPort: 5678
                   env:
+                      - name: N8N_HOST
+                        value: "n8n-internal"
                       - name: GENERIC_TIMEZONE
                         value: "America/Toronto"
                       - name: TZ
