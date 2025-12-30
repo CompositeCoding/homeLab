@@ -62,6 +62,7 @@ talosctl -n $NODE --talosconfig $TALOSCONFIG get machineconfig -o yaml
 
 # Shutdown the node
 # talosctl -n $NODE --talosconfig $TALOSCONFIG shutdown
+ talosctl -n $NODE --talosconfig $TALOSCONFIG get volumestatus u-local-volume
 
 # Get system disks
 talosctl -n $NODE --talosconfig $TALOSCONFIG get disks

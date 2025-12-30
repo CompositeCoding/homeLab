@@ -4,6 +4,6 @@ name: local-volume
 provisioning:
     diskSelector:
         match: disk.wwid == 'naa.50014ee003547c37'
-    maxSize: 950GB
+    maxSize: 100GB
 filesystem:
     type: ext4
