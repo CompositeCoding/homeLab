@@ -39,8 +39,6 @@ spec:
                         value: "true"
                       - name: N8N_SECURE_COOKIE
                         value: "false"
-
-
                   volumeMounts:
                       - name: n8n-data
                         mountPath: /home/node/.n8n
