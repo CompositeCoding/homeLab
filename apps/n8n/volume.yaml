@@ -13,7 +13,7 @@ spec:
     persistentVolumeReclaimPolicy: Delete
     storageClassName: local-storage
     local:
-        path: /var/mnt/local-volume
+        path: /var/mnt/local-volume/n8n
     nodeAffinity:
         required:
             nodeSelectorTerms:
