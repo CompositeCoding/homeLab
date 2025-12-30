@@ -4,7 +4,7 @@ metadata:
     name: n8n-service
 spec:
     type: LoadBalancer
-    loadBalancerClass: tailscale
+    loadBalancerClass: tailscale.com/operator
     ports:
         - port: 5678
           protocol: TCP
