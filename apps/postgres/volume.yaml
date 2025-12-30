@@ -13,7 +13,7 @@ spec:
     persistentVolumeReclaimPolicy: Delete
     storageClassName: local-storage
     local:
-        path: /var/mnt/local-volume/postgres-data-0
+        path: /var/mnt/local-volume
     nodeAffinity:
         required:
             nodeSelectorTerms:
@@ -38,7 +38,7 @@ spec:
     persistentVolumeReclaimPolicy: Delete
     storageClassName: local-storage
     local:
-        path: /var/mnt/local-volume/postgres-data-1
+        path: /var/mnt/local-volume
     nodeAffinity:
         required:
             nodeSelectorTerms:
@@ -63,7 +63,7 @@ spec:
     persistentVolumeReclaimPolicy: Delete
     storageClassName: local-storage
     local:
-        path: /var/mnt/local-volume/postgres-data-2
+        path: /var/mnt/local-volume
     nodeAffinity:
         required:
             nodeSelectorTerms:
