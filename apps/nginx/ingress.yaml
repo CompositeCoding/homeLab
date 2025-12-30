@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   name: nginx-ingress
   spec:
-    ingressClassName: tailscale
     defaultBackend:
       service:
         name: nginx
         port:
-          number: 8080
+          number: 80
+    ingressClassName: tailscale
     tls:
       - hosts:
           - nginx
