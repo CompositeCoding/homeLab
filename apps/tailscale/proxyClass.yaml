@@ -1,0 +1,18 @@
+apiVersion: tailscale.com/v1alpha1
+kind: ProxyClass
+metadata:
+  name: talos-proxy-config
+spec:
+  statefulSet:
+    pod:
+      spec:
+        securityContext:
+          runAsNonRoot: false
+          runAsUser: 0
+        containers:
+          - name: tailscale
+            securityContext:
+              privileged: true
+              capabilities:
+                add:
+                  - NET_ADMIN

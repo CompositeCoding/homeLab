@@ -5,6 +5,7 @@ metadata:
   namespace: home
   annotations:
     tailscale.com/expose: "true"
+    tailscale.com/proxy-class: "talos-proxy-config"
 spec:
   type: LoadBalancer
   selector:
