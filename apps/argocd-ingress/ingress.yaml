@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+spec:
+  defaultBackend:
+    service:
+      name: argo-service
+      port:
+        number: 8081
+  ingressClassName: tailscale
+  tls:
+    - hosts:
+        - argocd-server
