@@ -3,7 +3,7 @@ kind: PersistentVolume
 metadata:
     name: postgres-data-0
     labels:
-        app: postgres-data
+        app: postgres-data-0
 spec:
     capacity:
         storage: 30Gi
