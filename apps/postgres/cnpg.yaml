@@ -15,7 +15,7 @@ spec:
             selector:
                 matchLabels:
                     app: postgres-data
-    bootstrap:
-        initdb:
-            database: app
-            owner: app
+    # bootstrap:
+    #     initdb:
+    #         database: app
+    #         owner: app
