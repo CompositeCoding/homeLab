@@ -1,9 +1,21 @@
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata:
-    name: cluster-example
-    namespace: default
+    name: postgres
 spec:
     instances: 3
     storage:
-        size: 1Gi
+        pvcTemplate:
+            accessModes:
+                - ReadWriteOnce
+            storageClassName: local-storage
+            resources:
+                requests:
+                    storage: 30Gi
+            selector:
+                matchLabels:
+                    app: postgres-data
+    bootstrap:
+        initdb:
+            database: app
+            owner: app
