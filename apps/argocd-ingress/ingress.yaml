@@ -7,7 +7,7 @@ spec:
     service:
       name: argo-service
       port:
-        number: 8081
+        number: 8080
   ingressClassName: tailscale
   tls:
     - hosts:
