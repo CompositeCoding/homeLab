@@ -7,7 +7,7 @@ spec:
     service:
       name: nginx
       port:
-        number: 80
+        number: 8080
   ingressClassName: tailscale
   tls:
     - hosts:
