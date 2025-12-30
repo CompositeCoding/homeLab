@@ -14,7 +14,7 @@ spec:
                     storage: 30Gi
             selector:
                 matchLabels:
-                    app: postgres-data-0
+                    app: postgres-data
     bootstrap:
         initdb:
             database: app
