@@ -51,6 +51,8 @@ talosctl -n $NODE --talosconfig $TALOSCONFIG etcd members
 # Get machine config
 talosctl -n $NODE --talosconfig $TALOSCONFIG get machineconfig -o yaml
 
+talosctl -n $NODE --talosconfig $TALOSCONFIG apply machineconfig -f ./talos/machine-config.yaml --mode=no-reboot
+
 # Apply new configuration
 # talosctl -n $NODE --talosconfig $TALOSCONFIG apply-config --file ../config/talos/controlplane.yaml
 
