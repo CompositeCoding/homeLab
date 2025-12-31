@@ -33,7 +33,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: plex-data-pvc
+  name: pms-data-plex-media-server-0
   namespace: home
 spec:
   accessModes:
@@ -47,7 +47,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pms-data-plex-media-server-0
+  name: plex-config
   labels:
     app: plex-media-server
 spec:
@@ -72,7 +72,7 @@ spec:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: pms-config-plex-media-server-0
+  name:  pms-config-plex-media-server-0
   namespace: home
 spec:
   accessModes:
