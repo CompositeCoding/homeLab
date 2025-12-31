@@ -19,10 +19,10 @@ spec:
           persistence:
             data:
               enabled: true
-              existingClaim: "plex-data-pvc"
+              storageClass: "local-storage"
             config:
               enabled: true
-              existingClaim: "plex-config-pvc"
+              storageClass: "local-storage"
     - repoURL: 'https://github.com/CompositeCoding/homeLab.git'
       targetRevision: HEAD
       path: apps/plex
